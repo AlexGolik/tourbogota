@@ -1,0 +1,11 @@
+# Carpeta .vscode
+.vscode/
+
+# Archivos de configuración de usuario para VSCode
+.vscode/settings.json
+
+# Historial de carpetas abiertas
+.vscode/workspaceStorage/
+
+# Archivo .env (configuración de entorno)
+.env
