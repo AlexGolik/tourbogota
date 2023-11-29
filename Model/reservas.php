@@ -67,6 +67,26 @@ class reservas {
     public function setEstado_idestado($estado_idestado) {
         $this->estado_idestado = $estado_idestado;
     }
+    public function hacerReserva($fechaReserva, $cantidadTuristas, $costoTotal, $descripcion, $Planes_idPlanes) {
+        $conexion = new Conexion();
+    
+        // Obtener el estado_idestado inicial (puedes ajustar esto según tu lógica)
+        $estado_idestado = 1; // Por ejemplo, estado activo
+    
+        // Insertar la reserva en la base de datos
+        $query = "INSERT INTO reservas (fechaReserva, cantidadTuristas, costoTotal, descripcion, Planes_idPlanes, estado_idestado) 
+                    VALUES ('$fechaReserva', $cantidadTuristas, $costoTotal, '$descripcion', $Planes_idPlanes, $estado_idestado)";
+    
+        $resultado = $conexion->ejecutarQuery($query);
+    
+        if ($resultado) {
+            // La reserva se realizó con éxito
+            return true;
+        } else {
+            // Error al hacer la reserva
+            return false;
+        }
+    }
 }
 
 ?>
