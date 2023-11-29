@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $persona->guardar();
 
             // Redirige a la misma página después de la operación exitosa
-            header("Location: " . $_SERVER['PHP_SELF']);
+            header("Location:../Views/persona.php");
             exit();
         } catch (PDOException $e) {
             echo "Error al guardar la persona: " . $e->getMessage();
